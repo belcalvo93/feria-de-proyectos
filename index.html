@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feria de proyectos</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="page-header" id="inicio">
+    <h1 class="page-header__title">Feria de proyectos</h1>
+    <nav class="page-header__nav">
+      <a class="page-header__link page-header__link--active" href="#inicio">Inicio</a>
+      <a class="page-header__link" href="#proyectos">Proyectos</a>
+      <a class="page-header__link" href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="section-title" id="proyectos">
+      <h2 class="section-title__text">Filtros / índice</h2>
+      <div class="section-title__filters">
+        <input class="section-title__input" type="search" placeholder="Buscar proyecto" aria-label="Buscar proyecto">
+      </div>
+    </div>
+
+    <section class="project-list">
+      <p class="project-list__intro">Proyectos de la cursada de Programación III.</p>
+
+      <article class="project-card project-card--featured">
+        <span class="project-card__badge">Destacado</span>
+        <h3 class="project-card__title">Food Store</h3>
+        <p class="project-card__text">El proyecto grande del cuatrimestre.</p>
+        <div class="project-card__actions">
+          <button class="project-card__button project-card__button--primary" type="button" data-open-modal>Ver detalles</button>
+          <button class="project-card__button project-card__button--secondary" type="button" data-toggle-featured>Destacar</button>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <span class="project-card__badge project-card__badge--hidden">Destacado</span>
+        <h3 class="project-card__title">Calculadora</h3>
+        <p class="project-card__text">Calculadora web servida con nginx.</p>
+        <div class="project-card__actions">
+          <button class="project-card__button project-card__button--primary" type="button" data-open-modal>Ver detalles</button>
+          <button class="project-card__button project-card__button--secondary" type="button" data-toggle-featured>Destacar</button>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <span class="project-card__badge project-card__badge--hidden">Destacado</span>
+        <h3 class="project-card__title">Jornada de talleres</h3>
+        <p class="project-card__text">Página HTML de una jornada de talleres.</p>
+        <div class="project-card__actions">
+          <button class="project-card__button project-card__button--primary" type="button" data-open-modal>Ver detalles</button>
+          <button class="project-card__button project-card__button--secondary" type="button" data-toggle-featured>Destacar</button>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <span class="project-card__badge project-card__badge--hidden">Destacado</span>
+        <h3 class="project-card__title">API con FastAPI</h3>
+        <p class="project-card__text">Del objeto al servicio con FastAPI.</p>
+        <div class="project-card__actions">
+          <button class="project-card__button project-card__button--primary" type="button" data-open-modal>Ver detalles</button>
+          <button class="project-card__button project-card__button--secondary" type="button" data-toggle-featured>Destacar</button>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="page-footer" id="contacto">
+    <p class="page-footer__text">Trabajo práctico de HTML y CSS avanzado, UTN.</p>
+  </footer>
+
+  <div class="modal" id="modal">
+    <div class="modal__overlay"></div>
+    <div class="modal__panel" role="dialog" aria-labelledby="modal-title">
+      <h2 class="modal__title" id="modal-title">Detalle del proyecto</h2>
+      <p class="modal__text">Acá va la descripción completa del proyecto.</p>
+      <button class="modal__close" type="button">Cerrar</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

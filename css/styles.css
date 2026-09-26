@@ -43,6 +43,11 @@ body {
   color: var(--color-superficie);
 }
 
+/* Modificador: link de la sección actual */
+.page-header__link--active {
+  font-weight: bold;
+}
+
 /* position: sticky -> queda pegada arriba al hacer scroll */
 .section-title {
   background: var(--color-superficie);

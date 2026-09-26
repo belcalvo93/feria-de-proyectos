@@ -1,0 +1,186 @@
+:root {
+  --color-primario: #0385b8;
+  --color-secundario: #902e53;
+  --color-fondo: #FAF6F2;
+  --color-superficie: #FFFFFF;
+  --color-texto: #1F2421;
+  --color-texto-secundario: #596066;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  color: var(--color-texto);
+  background: var(--color-fondo);
+}
+
+/* display: block -> zonas verticales de la página */
+.page-header,
+.section-title,
+.project-list,
+.page-footer {
+  display: block;
+  padding: 16px 24px;
+}
+
+.page-header {
+  background: var(--color-primario);
+  color: var(--color-superficie);
+}
+
+.page-header__title {
+  margin: 0 0 8px;
+}
+
+.page-header__link {
+  display: inline-block;
+  margin-right: 16px;
+  color: var(--color-superficie);
+}
+
+/* position: sticky -> queda pegada arriba al hacer scroll */
+.section-title {
+  background: var(--color-superficie);
+  border-bottom: 2px solid var(--color-primario);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.section-title__text {
+  margin: 0 0 8px;
+}
+
+.section-title__input {
+  padding: 6px 10px;
+  border: 1px solid var(--color-texto-secundario);
+  border-radius: 4px;
+}
+
+.project-list__intro {
+  margin: 0 0 16px;
+}
+
+/* display: inline-block -> tarjetas alineadas en una misma línea */
+.project-card {
+  display: inline-block;
+  vertical-align: top;
+  width: 240px;
+  margin: 0 12px 16px 0;
+  padding: 16px;
+  background: var(--color-superficie);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.project-card--featured {
+  border: 2px solid var(--color-secundario);
+}
+
+.project-card__badge {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 2px 8px;
+  background: var(--color-secundario);
+  color: var(--color-superficie);
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+/* visibility: hidden -> se oculta pero conserva su espacio */
+.project-card__badge--hidden {
+  visibility: hidden;
+}
+
+.project-card__title {
+  margin: 0 0 8px;
+}
+
+.project-card__text {
+  margin: 0 0 12px;
+  color: var(--color-texto-secundario);
+}
+
+/* display: inline-block -> botones en una misma línea */
+.project-card__button {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid var(--color-primario);
+  border-radius: 4px;
+  background: var(--color-superficie);
+  color: var(--color-primario);
+  cursor: pointer;
+}
+
+.project-card__button--primary {
+  background: var(--color-primario);
+  color: var(--color-superficie);
+}
+
+.project-card__button--secondary {
+  background: var(--color-secundario);
+  border-color: var(--color-secundario);
+  color: var(--color-superficie);
+}
+
+.page-footer {
+  background: var(--color-primario);
+  color: var(--color-superficie);
+}
+
+/* display: none -> el modal cerrado no ocupa espacio */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+}
+
+.modal--open {
+  display: block;
+}
+
+/* position: absolute -> cubre toda la ventana sin ocupar lugar */
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(31, 36, 33, 0.6);
+  z-index: 0;
+}
+
+/* position: relative -> contenedor de referencia del botón cerrar */
+.modal__panel {
+  position: relative;
+  z-index: 1;
+  max-width: 420px;
+  margin: 15vh auto 0;
+  padding: 24px;
+  background: var(--color-superficie);
+  border-radius: 8px;
+}
+
+.modal__title {
+  margin: 0 0 8px;
+}
+
+.modal__text {
+  margin: 0 0 16px;
+  color: var(--color-texto-secundario);
+}
+
+.modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 10px;
+  border: 1px solid var(--color-primario);
+  border-radius: 4px;
+  background: var(--color-superficie);
+  color: var(--color-primario);
+  cursor: pointer;
+}

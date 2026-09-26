@@ -76,6 +76,7 @@ body {
   background: var(--color-superficie);
   border: 1px solid #ccc;
   border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
 }
 
 .project-card--featured {
@@ -183,4 +184,70 @@ body {
   background: var(--color-superficie);
   color: var(--color-primario);
   cursor: pointer;
+}
+
+/* ---------- Selectores y estados ---------- */
+
+/* Selector descendente: cualquier p dentro de project-list */
+.project-list p {
+  font-size: 15px;
+}
+
+/* Combinador hijo directo: solo el título que es hijo directo de la tarjeta */
+.project-card > .project-card__title {
+  color: var(--color-primario);
+}
+
+/* :nth-child -> tarjetas pares con borde superior de color.
+   El p de intro es el hijo 1, así que las tarjetas son los hijos 2 a 5 */
+.project-card:nth-child(even) {
+  border-top: 4px solid var(--color-primario);
+}
+
+/* Debe ir después de la regla anterior para ganarle (misma especificidad) */
+.project-card--featured:nth-child(even) {
+  border-top-color: var(--color-secundario);
+}
+
+/* opacity -> se ve atenuada, pero conserva su espacio y sigue siendo clickeable */
+.project-card--dimmed {
+  opacity: 0.5;
+}
+
+/* :hover en tarjetas y botones */
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.project-card--dimmed:hover {
+  opacity: 1;
+}
+
+.project-card__button:hover,
+.modal__close:hover {
+  filter: brightness(1.15);
+}
+
+/* :focus con indicador visible para navegar con teclado */
+.section-title__input:focus,
+.project-card__button:focus,
+.modal__close:focus {
+  outline: 3px solid var(--color-secundario);
+  outline-offset: 2px;
+}
+
+/* ---------- Ventana angosta ---------- */
+@media (max-width: 600px) {
+  .page-header,
+  .section-title,
+  .project-list,
+  .page-footer {
+    padding: 12px 16px;
+  }
+
+  .project-card {
+    width: 100%;
+    margin-right: 0;
+  }
 }
